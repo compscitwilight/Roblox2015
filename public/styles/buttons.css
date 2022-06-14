@@ -1,0 +1,71 @@
+.btn-growth-lg {
+    user-select: none;
+    background-color: #00B259;
+    border: 1px solid #00B259;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    height: auto;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 15px;
+    font-size: 20px;
+    line-height: 100%;
+    border-radius: 5px;
+}
+
+.btn-growth-md {
+    user-select: none;
+    background-color: #00B259;
+    border: 1px solid #00B259;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    height: auto;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 9px;
+    font-size: 16px;
+    line-height: 100%;
+    border-radius: 5px;
+}
+
+.btn-growth-sm {
+    user-select: none;
+    background-color: #00B259;
+    border: 1px solid #00B259;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    height: auto;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 7px;
+    font-size: 16px;
+    line-height: 100%;
+    border-radius: 3px;
+}
+
+.btn-growth-xs {
+    user-select: none;
+    background-color: #00B259;
+    border: 1px solid #00B259;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    height: auto;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 100%;
+    border-radius: 3px;
+}

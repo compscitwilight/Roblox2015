@@ -1,0 +1,104 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#topbar-logo {
+    width: 126px;
+    margin: -12.5px;
+}
+
+#topbar {
+    padding: 9px 16px;
+    background-color: #0074BD;
+}
+
+#topbar a {
+    display: inline;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 3px;
+    margin: 24px;
+    padding: 6px;
+    color: white;
+    text-decoration: none;
+    user-select: none;
+}
+
+#topbar a:hover {
+    background-color: #036BAD;
+}
+
+#topbar img {
+    bottom: 20%;
+}
+
+#topbar-right {
+    float: right;
+    background-color: #0074BD;
+}
+
+#topbar-right a {
+    display: inline;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 3px;
+    margin: 24px;
+    padding: 6px;
+    color: white;
+    text-decoration: none;
+    user-select: none;
+}
+
+#search-bar {
+    margin: -2.5px;
+    border-width: 1px;
+    height: 28px;
+    border-radius: 2.5px;
+    color: #B8B8B8;
+    padding: 4.5px 10px;
+    padding-right: 16%;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-size: medium;
+}
+
+#topbar-settings {
+    width: 28px;
+    cursor: pointer;
+}
+
+/* signup topbar */
+#signup-topbar {
+    background-color: rgba(0, 0, 0, 0.35);
+    min-height: 66px;
+}
+
+#signup-topbar a {
+    position: inherit;
+    display: inline;
+    margin: 8px;
+    padding: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+#signup-topbar a.active {
+    text-decoration: underline;
+}
+
+#topbar-logo-signup {
+    width: 36px;
+    margin-left: 20%;
+    margin-top: .5%;
+}
+
+#login {
+    float: right;
+    margin: 10px;
+    margin-right: 27.5%;
+}
+
+#login form input {
+    padding: 10px;
+}

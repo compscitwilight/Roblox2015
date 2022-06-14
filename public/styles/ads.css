@@ -1,0 +1,11 @@
+#ad-container-left {
+    margin: 2px;
+    float: left;
+    cursor: pointer;
+}
+
+#ad-container-right {
+    margin: 2px;
+    float: right;
+    cursor: pointer;
+}

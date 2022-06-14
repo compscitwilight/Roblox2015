@@ -1,0 +1,18 @@
+#user-headshot {
+    float: left;
+    margin: 5px;
+}
+
+#greeting {
+    display: block;
+    float: left;
+    margin-top: 75px;
+    font-weight: 100;
+    color: #343434;
+    overflow: hidden;
+}
+
+#games {
+    display: inline-block;
+    margin-top: 128px;
+}
