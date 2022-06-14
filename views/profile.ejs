@@ -37,15 +37,20 @@
     <div id="sidebar"></div>
     <div id="content">
         <div id="profile-top-container">
-            <img src=<%=user.avatarCdn%>>
-            <h1><%=user.username%></h1>
+            <img id="profile-headshot" src=<%=user.avatarCdn%>>
+            <h1 id="profile-username"><%=user.username%></h1>
+            <% if (user.username == session.user.username) {%>
+                <i id="profile-status" onclick="console.warn()" style="cursor: pointer;">"<%= user.status %>"</i>
+            <%} else {%>
+                <i id="profile-status">"<%= user.status %>"</i>
+            <%}%>
             <div id="profile-actions">
                 <% if (!session.authenticated) { %>
-                    <button disabled>Message</button>
-                    <button disabled>Send Friend Request</button>
+                    <button disabled class="profile-action">Message</button>
+                    <button disabled class="profile-action">Send Friend Request</button>
                 <%} else {%>
-                    <button>Message</button>
-                    <button>Send Friend Request</button>
+                    <button class="profile-action">Message</button>
+                    <button class="profile-action">Send Friend Request</button>
                 <%}%>
             </div>
         </div>
