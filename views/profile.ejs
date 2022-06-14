@@ -38,6 +38,15 @@
         <div id="profile-top-container">
             <img src=<%=user.avatarCdn%>>
             <h1><%=user.username%></h1>
+            <div id="profile-actions">
+                <% if (!session.authenticated) { %>
+                    <button disabled>Message</button>
+                    <button disabled>Send Friend Request</button>
+                <%} else {%>
+                    <button>Message</button>
+                    <button>Send Friend Request</button>
+                <%}%>
+            </div>
         </div>
     </div>
 </body>
