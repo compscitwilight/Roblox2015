@@ -69,3 +69,18 @@
     line-height: 100%;
     border-radius: 3px;
 }
+
+.btn-secondary-xs {
+    user-select: none;
+    border: 1px solid #00a2ff;
+    cursor: pointer;
+    display: inline-block;
+    height: auto;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 100%;
+    border-radius: 3px;
+}
