@@ -39,20 +39,22 @@
         <div id="profile-top-container">
             <img id="profile-headshot" src=<%=user.avatarCdn%>>
             <h1 id="profile-username"><%=user.username%></h1>
-            <% if (user.username == session.user.username) {%>
+            <% if (session.authenticated) { %>
+                <% if (user.username == session.user.username) {%>
                 <i id="profile-status" onclick="console.warn()" style="cursor: pointer;">"<%= user.status %>"</i>
-            <%} else {%>
-                <i id="profile-status">"<%= user.status %>"</i>
-            <%}%>
-            <div id="profile-actions">
-                <% if (!session.authenticated) { %>
-                    <button disabled class="profile-action">Message</button>
-                    <button disabled class="profile-action">Send Friend Request</button>
                 <%} else {%>
-                    <button class="profile-action">Message</button>
-                    <button class="profile-action">Send Friend Request</button>
+                    <i id="profile-status">"<%= user.status %>"</i>
                 <%}%>
-            </div>
+                <div id="profile-actions">
+                    <% if (!session.authenticated) { %>
+                        <button disabled class="profile-action">Message</button>
+                        <button disabled class="profile-action">Send Friend Request</button>
+                    <%} else {%>
+                        <button class="profile-action">Message</button>
+                        <button class="profile-action">Send Friend Request</button>
+                    <%}%>
+                </div>
+            <% } %>
         </div>
     </div>
 </body>

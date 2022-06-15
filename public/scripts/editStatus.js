@@ -1,0 +1,1 @@
+const profileStatus = document.querySelector("#profile-status")
