@@ -32,4 +32,14 @@ router.get("/components/:component", (req, res) => {
     res.sendFile(path, { root: __dirname })
 })
 
+router.get("/scripts/:script", (req, res) => {
+    const script = req.params.script
+    const path = "./public/scripts/" + script
+    if (!fs.existsSync(path)) {
+        res.sendStatus(404)
+        return
+    }
+    res.sendFile(path, { root: __dirname })
+})
+
 module.exports = router
