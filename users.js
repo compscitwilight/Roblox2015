@@ -4,6 +4,7 @@ const router = express.Router()
 
 const users = require("./usersdb")
 
+// get requests
 router.get("/:userId", (req, res) => {
     const userId = req.params.userId
     const user = users.find(u => u.id == userId)
@@ -20,6 +21,7 @@ router.get("/:userId/profile", (req, res) => {
     res.render("profile.ejs", { session: req.session, user: user })
 })
 
+// post requests
 router.post("/authenticate", (req, res) => {
     const { username, password } = req.body
     if (req.session.authenticated) return
@@ -45,6 +47,30 @@ router.post("/authenticate", (req, res) => {
         res.redirect("/home")
         return
     }
+})
+
+router.post("/:userId/status", (req, res) => {
+    const userId = req.params.userId
+    const status = req.body.status
+    if (!status) {
+        res.sendStatus(403)
+        return
+    }
+    if (!req.session.authenticated) {
+        res.sendStatus(403)
+        return
+    }
+    if (req.session.user.id != userId) {
+        res.sendStatus(403)
+        return
+    }
+
+    const user = users.find(user => user.id == userId)
+    if (!user) {
+        res.sendStatus(404)
+        return
+    }
+    user.status = status
 })
 
 module.exports = router
