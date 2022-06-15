@@ -45,17 +45,18 @@
                 <%} else {%>
                     <i id="profile-status">"<%= user.status %>"</i>
                 <%}%>
-                <div id="profile-actions">
-                    <% if (!session.authenticated) { %>
-                        <button disabled class="profile-action">Message</button>
-                        <button disabled class="profile-action">Send Friend Request</button>
-                    <%} else {%>
-                        <button class="profile-action">Message</button>
-                        <button class="profile-action">Send Friend Request</button>
-                    <%}%>
-                </div>
             <% } %>
+            <div id="profile-actions">
+                <% if (!session.authenticated) { %>
+                    <button disabled class="profile-action">Message</button>
+                    <button disabled class="profile-action">Send Friend Request</button>
+                <%} else {%>
+                    <button class="profile-action">Message</button>
+                    <button class="profile-action">Send Friend Request</button>
+                <%}%>
+            </div>
         </div>
     </div>
 </body>
+    <script src="/public/scripts/editStatus.js"></script>
 </html>
