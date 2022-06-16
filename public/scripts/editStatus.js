@@ -8,6 +8,8 @@ if (profileStatus) {
             editingInput.value = profileStatus.innerHTML
             editingInput.classList.add("profile-status")
             editingInput.style.cursor = "pointer"
+            editingInput.required = true
+            editingInput.name = "status"
 
             profileStatus.replaceWith(editingInput)
             editing = true
