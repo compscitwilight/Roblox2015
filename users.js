@@ -49,6 +49,50 @@ router.post("/authenticate", (req, res) => {
     }
 })
 
+router.post("/register", (req, res) => {
+    const body = req.body
+    if (req.session.authenticated) return
+    if (users.find(user => user.username == body.username)) {
+        res.json("User already exists!")
+        return
+    }
+    if (body.username.length > 20) {
+        res.status(403).send("Username exceeds limit of 20 characters")
+        return
+    }
+    if (body.username.includes(" ")) {
+        res.status(403).send("Username includes a space, which is not allowed")
+        return
+    }
+    if (body.username.startsWith(body.username.match(/[0-9]/g))) {
+        res.status(403).send("Username cannot start with a number")
+        return
+    }
+    users.push({
+        id: users.length++,
+        username: body.username,
+        password: body.password,
+        status: "",
+        robux: 0,
+        tickets: 10,
+        avatarCdn: "https://tr.rbxcdn.com/c4265017c98559993061733b1125a23c/150/150/AvatarHeadshot/Png"
+    })
+
+    // authenticating the user
+    const newUser = users.find(user => user.username == body.username)
+    req.session.authenticated = true
+    req.session.user = newUser
+    req.session.save((err) => {
+        if (err) {
+            res.status(500).send(err)
+            return
+        }
+        console.log("Session saved!")
+    })
+
+    res.redirect("/home")
+})
+
 router.post("/:userId/status", (req, res) => {
     const userId = req.params.userId
     const status = req.body.status
