@@ -53,7 +53,7 @@ router.post("/register", (req, res) => {
     const body = req.body
     if (req.session.authenticated) return
     if (users.find(user => user.username == body.username)) {
-        res.json("User already exists!")
+        res.status(403).send("User already exists!")
         return
     }
     if (body.username.length > 20) {
