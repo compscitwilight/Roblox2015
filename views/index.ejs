@@ -27,13 +27,13 @@
     </div>
     <div id="signup">
         <h3 id="signup-text">Sign up and start having fun!</h3>
-        <form id="signup-form">
-            <input type="username" placeholder="Username (3-20 characters, no spaces)">
-            <input type="password" placeholder="Password (4 letters and 2 numbers minimum)">
-            <input type="password" placeholder="Confirm Password">
+        <form id="signup-form" method="POST">
+            <input type="username" placeholder="Username (3-20 characters, no spaces)" name="username" required>
+            <input type="password" placeholder="Password (4 letters and 2 numbers minimum)" name="password" required>
+            <input type="password" placeholder="Confirm Password" required>
             <div id="birthday-form">
                 <p>Birthday |</p>
-                <select title="Month">
+                <select title="Month" name="bd-month" required>
                     <option value="0">Month</option>
                     <option value="1">January</option>
                     <option value="2">February</option>
@@ -49,7 +49,7 @@
                     <option value="12">December</option>
                 </select>
                 <p>|</p>
-                <select title="Day">
+                <select title="Day" name="bd-day" required>
                     <option value="0">Day</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -84,7 +84,7 @@
                     <option value="31">31</option>
                 </select>
                 <p>|</p>
-                <select title="Year">
+                <select title="Year" name="bd-year" required>
                     <option value="0">Year</option>
                     <option value="2015">2015</option>
                     <option value="2014">2014</option>
