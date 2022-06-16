@@ -69,7 +69,7 @@ router.post("/register", (req, res) => {
         return
     }
     users.push({
-        id: users.length++,
+        id: users.length + 1,
         username: body.username,
         password: body.password,
         status: "",
