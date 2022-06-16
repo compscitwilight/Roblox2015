@@ -18,6 +18,10 @@ router.get("/:userId", (req, res) => {
 router.get("/:userId/profile", (req, res) => {
     const userId = req.params.userId
     const user = users.find(u => u.id == userId)
+    if (!user) {
+        res.status(404).redirect("/")
+        return
+    }
     res.render("profile.ejs", { session: req.session, user: user })
 })
 
