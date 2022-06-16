@@ -35,7 +35,6 @@ body {
 
 #topbar-right {
     float: right;
-    background-color: #0074BD;
 }
 
 #topbar-right a {
@@ -66,6 +65,23 @@ body {
 #topbar-settings {
     width: 28px;
     cursor: pointer;
+}
+
+#robux {
+    display: inline-block;
+}
+
+#tickets {
+    display: inline-block;
+}
+
+#robux img {
+    width: 32px;
+    height: 32px;
+}
+
+#topbar-robux {
+    display: inline;
 }
 
 /* signup topbar */
