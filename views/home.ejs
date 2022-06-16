@@ -27,8 +27,13 @@
                 <a href="/">Sign Up</a>
                 <a href="/">Log In</a>
             <% } else { %>
-                <a href="/robux" id="topbar-robux"><%= session.user.robux %></a>
-                <a href="/develop" id="topbar-tickets"><%= session.user.tickets %></a>
+                <div id="robux">
+                    <img src="/public/images/robux.png">
+                    <a href="/robux" id="topbar-robux"><%= session.user.robux %></a>
+                </div>
+                <div id="tickets">
+                    <a href="/develop" id="topbar-tickets"><%= session.user.tickets %></a>
+                </div>
                 <img src="/public/images/settings-icon.png" id="topbar-settings">
             <% } %>
         </div>
