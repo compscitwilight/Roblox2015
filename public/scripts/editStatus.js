@@ -1,6 +1,7 @@
+const statusForm = document.querySelector("#status-form")
 const profileStatus = document.querySelector("#profile-status")
 
-if (profileStatus) {
+if (statusForm && profileStatus) {
     let editing = false
     const ToggleStatusEdit = () => {
         if (!editing) {
@@ -17,4 +18,5 @@ if (profileStatus) {
     }
 
     profileStatus.addEventListener("click", (event) => ToggleStatusEdit())
+    statusForm.addEventListener("submit", (event) => location.reload())
 }

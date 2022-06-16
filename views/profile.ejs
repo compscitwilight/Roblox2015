@@ -41,7 +41,7 @@
             <h1 id="profile-username"><%=user.username%></h1>
             <% if (session.authenticated) { %>
                 <% if (user.username == session.user.username) {%>
-                    <form method="POST" action="/users/<%=user.id%>/status">
+                    <form method="POST" action="/users/<%=user.id%>/status" id="status-form">
                         <i id="profile-status" onclick="console.warn()" style="cursor: pointer;">"<%= user.status %>"</i>
                     </form>
                 <%} else {%>
