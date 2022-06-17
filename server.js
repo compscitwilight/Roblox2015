@@ -1,8 +1,8 @@
 const express = require("express")
 const session = require("express-session")
 const fs = require("fs")
+const serverConfig = require("./config/server.json")
 const app = express()
-const port = 3000
 
 const users = require("./usersdb")
 
@@ -22,8 +22,8 @@ app.use(express.json())
 app.use("/public", require("./public.js"))
 app.use("/users", require("./users.js"))
 
-app.listen(port, () => {
-    console.log("Server is online on port " + port)
+app.listen(serverConfig.PORT, () => {
+    console.log(serverConfig.StartMsg)
 })
 
 app.all("/", (req, res) => {
