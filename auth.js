@@ -10,7 +10,7 @@ module.exports = {
             res.status(403).send("Username includes a space, which is not allowed")
             return
         }
-        if (data.username.startsWith(body.username.match(/[0-9]/g))) {
+        if (data.username.startsWith(data.username.match(/[0-9]/g))) {
             res.status(403).send("Username cannot start with a number")
             return
         }

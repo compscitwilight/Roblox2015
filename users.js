@@ -3,6 +3,7 @@ const ejs = require("ejs")
 const router = express.Router()
 
 const users = require("./usersdb")
+const auth = require("./auth")
 
 // get requests
 router.get("/:userId", (req, res) => {
@@ -64,36 +65,10 @@ router.post("/register", (req, res) => {
         res.status(403).send("User already exists!")
         return
     }
-    if (body.username.length > 20) {
-        res.status(403).send("Username exceeds limit of 20 characters")
-        return
-    }
-    if (body.username.includes(" ")) {
-        res.status(403).send("Username includes a space, which is not allowed")
-        return
-    }
-    if (body.username.startsWith(body.username.match(/[0-9]/g))) {
-        res.status(403).send("Username cannot start with a number")
-        return
-    }
-    users.push({
-        id: users.length + 1,
-        username: body.username,
-        password: body.password,
-        status: "",
-        robux: 0,
-        tickets: 10,
-        avatarCdn: "https://tr.rbxcdn.com/c4265017c98559993061733b1125a23c/150/150/AvatarHeadshot/Png",
-        moderation: {
-            moderated: false,
-            note: "",
-            length: "",
-            reviewed: ""
-        }
-    })
+    const newUser = auth.RegisterUser(body)
 
     // authenticating the user
-    const newUser = users.find(user => user.username == body.username)
+    //const newUser = users.find(user => user.username == body.username)
     req.session.authenticated = true
     req.session.user = newUser
     req.session.save((err) => {
