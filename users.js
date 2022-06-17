@@ -61,10 +61,6 @@ router.post("/authenticate", (req, res) => {
 router.post("/register", (req, res) => {
     const body = req.body
     if (req.session.authenticated) return
-    if (users.find(user => user.username == body.username)) {
-        res.status(403).send("User already exists!")
-        return
-    }
     const newUser = auth.RegisterUser(body)
 
     // authenticating the user
