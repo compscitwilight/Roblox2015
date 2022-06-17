@@ -2,6 +2,10 @@ const users = require("./usersdb")
 
 module.exports = {
     RegisterUser(data) {
+        if (users.find(user => user.username == data.username)) {
+            res.status(403).send("User already exists!")
+            return
+        }
         if (data.username.length > 20) {
             res.status(403).send("Username exceeds limit of 20 characters")
             return
