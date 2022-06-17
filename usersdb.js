@@ -10,10 +10,27 @@ module.exports = [
         avatarCdn: "https://tr.rbxcdn.com/c4265017c98559993061733b1125a23c/150/150/AvatarHeadshot/Png",
         admin: true,
         moderation: {
+            moderated: false,
+            note: "",
+            modLength: "",
+            reviewed: "",
+            type: ""
+        }
+    },
+    {
+        id: 2,
+        username: "roughinception",
+        password: "admin",
+        status: "This account is for testing moderation features.",
+        robux: 0,
+        tickets: 0,
+        avatarCdn: "",
+        admin: false,
+        moderation: {
             moderated: true,
-            note: "haha",
-            modLength: "100 days",
-            reviewed: "today",
+            note: "test",
+            modLength: "forever",
+            reviewed: "6/17/2022 5:01AM PST",
             type: "ban"
         }
     }
