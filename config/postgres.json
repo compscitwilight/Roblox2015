@@ -1,0 +1,6 @@
+{
+    "HOST": "localhost",
+    "DATABASE": "roblox2015",
+    "PASSWORD": "super",
+    "PORT": 5432
+}
