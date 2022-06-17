@@ -10,7 +10,7 @@ const users = require("./usersdb")
 app.set("view engine", "ejs")
 
 app.use(session({
-    secret: "ashjga0uig04uj0iagjusopgu-3oi4jgpaw",
+    secret: serverConfig.Secret,
     saveUninitialized: true,
     cookie: { secure: false },
     resave: false

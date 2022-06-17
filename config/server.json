@@ -1,4 +1,5 @@
 {
     "PORT": 3000,
-    "StartMsg": "Server is now online."
+    "StartMsg": "Server is now online.",
+    "Secret": "ashjga0uig04uj0iagjusopgu-3oi4jgpaw"
 }
