@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/public/styles/global.css" rel="stylesheet">
     <link href="/public/styles/topbar.css" rel="stylesheet">
+    <link href="/public/styles/notauthorized.css" rel="stylesheet">
     <link href="/public/images/favicon.svg" rel="icon" type="image/svg+xml">
     <title>ROBLOX.com</title>
 </head>
@@ -32,7 +33,13 @@
     </div>
     <div id="content">
         <div id="moderation">
-            <h1></h1>
+            <%if (moderation.type.toLowerCase() == "warning") {%>
+                <h1>Warning</h1>
+            <%} else if (moderation.type.toLowerCase() == "deleted") {%>
+                <h1>Account Deleted</h1>
+            <%} else {%>
+                <h1>Banned for <%=moderation.modLength%></h1>
+            <%}%>
             <p>Our content monitors have determined that your behavior at ROBLOX has been in violation of our Terms of Service.
                 We will terminate your account if you do not abide by the rules.
             </p>

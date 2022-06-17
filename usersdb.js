@@ -13,7 +13,8 @@ module.exports = [
             moderated: true,
             note: "haha",
             modLength: "100 days",
-            reviewed: "today"
+            reviewed: "today",
+            type: "ban"
         }
     }
 ]
