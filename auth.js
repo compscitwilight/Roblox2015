@@ -1,7 +1,7 @@
 const users = require("./usersdb")
 
 module.exports = {
-    RegisterUser(data) {
+    RegisterUser(data, res) {
         if (users.find(user => user.username == data.username)) {
             res.status(403).send("User already exists!")
             return
