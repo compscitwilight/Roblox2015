@@ -19,7 +19,7 @@ module.exports = [
     },
     {
         id: 2,
-        username: "roughinception",
+        username: "MALICIOUS",
         password: "admin",
         status: "This account is for testing moderation features.",
         robux: 0,
