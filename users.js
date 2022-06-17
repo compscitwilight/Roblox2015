@@ -22,6 +22,10 @@ router.get("/:userId/profile", (req, res) => {
         res.status(404).redirect("/")
         return
     }
+    if (user.moderation.moderated) {
+        res.redirect("/")
+        return
+    }
     res.render("profile.ejs", { session: req.session, user: user })
 })
 
