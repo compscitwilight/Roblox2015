@@ -115,10 +115,12 @@ router.post("/logout", (req, res) => {
     req.session.destroy((err) => {
         if (err) {
             res.status(500).send(err)
+            res.redirect("/")
             return
         }
 
         console.log("logged out user")
+        res.redirect("/")
     })
 })
 
