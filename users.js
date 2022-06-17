@@ -107,6 +107,21 @@ router.post("/register", (req, res) => {
     res.redirect("/home")
 })
 
+router.post("/logout", (req, res) => {
+    if (!req.session.authenticated) {
+        res.sendStatus(403)
+        return
+    }
+    req.session.destroy((err) => {
+        if (err) {
+            res.status(500).send(err)
+            return
+        }
+
+        console.log("logged out user")
+    })
+})
+
 router.post("/:userId/status", (req, res) => {
     const userId = req.params.userId
     const status = req.body.status
