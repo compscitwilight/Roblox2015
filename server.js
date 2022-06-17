@@ -67,8 +67,8 @@ app.all("/:page", (req, res) => {
         return
     }
     const page = req.params.page
-    const path = "/views/" + page + ".html"
-    if (!fs.existsSync(path)) {
+    const path = page + ".ejs"
+    if (!fs.existsSync("./views/" + path)) {
         res.sendStatus(404)
         return
     }
