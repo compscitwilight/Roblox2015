@@ -10,10 +10,10 @@ module.exports = [
         avatarCdn: "https://tr.rbxcdn.com/c4265017c98559993061733b1125a23c/150/150/AvatarHeadshot/Png",
         admin: true,
         moderation: {
-            moderated: false,
-            note: "",
-            length: "",
-            reviewed: ""
+            moderated: true,
+            note: "haha",
+            modLength: "100 days",
+            reviewed: "today"
         }
     }
 ]

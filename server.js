@@ -40,10 +40,20 @@ app.all("/home", (req, res) => {
         res.redirect("/")
         return
     }
+    if (req.session.user.moderation.moderated) {
+        console.log("yea")
+        res.render("notauthorized.ejs", { moderation: req.session.user.moderation })
+        return
+    }
     res.render("home.ejs", { session: req.session })
 })
 
 app.all("/:page", (req, res) => {
+    if (req.session.user.moderation.moderated) {
+        console.log("yea")
+        req.render("notauthorized.ejs", { moderation: req.session.user.moderation })
+        return
+    }
     const page = req.params.page
     const path = "/views/" + page + ".html"
     if (!fs.existsSync(path)) {
