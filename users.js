@@ -79,7 +79,13 @@ router.post("/register", (req, res) => {
         status: "",
         robux: 0,
         tickets: 10,
-        avatarCdn: "https://tr.rbxcdn.com/c4265017c98559993061733b1125a23c/150/150/AvatarHeadshot/Png"
+        avatarCdn: "https://tr.rbxcdn.com/c4265017c98559993061733b1125a23c/150/150/AvatarHeadshot/Png",
+        moderation: {
+            moderated: false,
+            note: "",
+            length: "",
+            reviewed: ""
+        }
     })
 
     // authenticating the user
