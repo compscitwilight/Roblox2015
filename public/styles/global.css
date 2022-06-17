@@ -4,3 +4,7 @@ body {
     margin: 0px;
     background-color: #E3E3E3;
 }
+
+#content {
+    margin-left: 12.5%;
+}

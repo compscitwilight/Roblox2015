@@ -10,7 +10,7 @@
     <link href="/public/styles/ads.css" rel="stylesheet">
     <link href="/public/styles/sidebar.css" rel="stylesheet">
     <link href="/public/images/favicon.svg" rel="icon" type="image/svg+xml">
-    <title>ROBLOX.com</title>
+    <title>Avatar Items, Virtual Avatars, Virtual Goods</title>
 </head>
 <body>
     <div id="topbar">
@@ -74,27 +74,26 @@
             </li>
         </ul>
     </div>
-    <!--
-    <div id="ad-container-left">
-        <img class="ad-skyscraper" src="https://images.rbxcdn.com/b52c03d7260a8d693e6fc4e4fa16febd-AdSkyscraperTemplate.png">
-    </div>
-    <div id="ad-container-right">
-        <img class="ad-skyscraper" src="https://images.rbxcdn.com/b52c03d7260a8d693e6fc4e4fa16febd-AdSkyscraperTemplate.png">
-    </div>
-    -->
     <div id="content">
-        <div id="greeting-div">
-            <a href="/users/<%=session.user.id%>/profile">
-                <img id="user-headshot" src=<%=session.user.avatarCdn%>>
+        <div id="header">
+            <a href="/catalog" id="header-text">
+                <b>Catalog</b>
             </a>
-            <h1 id="greeting">Hello, <%=session.user.username%>!</h1>
+            <form method="GET" id="catalog-query">
+                <input type="text" name="text">
+                <select name="category">
+                    <option value="All Categories">All Categories</option>
+                    <option value="Featured">Featured</option>
+                    <option value="Collectibles">Collectibles</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Body Parts">Body Parts</option>
+                    <option value="Gear">Gear</option>
+                </select>
+                <button type="submit">
+                    <b>Search</b>
+                </button>
+            </form>
         </div>
-        <div id="friends-container"></div>
-        <div id="games"></div>
     </div>
 </body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        //$("#topbar").load("/public/components/topbar.ejs")
-    </script>
 </html>
