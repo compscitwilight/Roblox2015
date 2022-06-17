@@ -3,3 +3,7 @@
     border-width: 1px;
     padding: 10px;
 }
+
+#moderation b {
+    display: inline;
+}
