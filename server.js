@@ -72,5 +72,5 @@ app.all("/:page", (req, res) => {
         res.sendStatus(404)
         return
     }
-    res.sendFile(path, { root: __dirname })
+    res.render(path, { session: req.session })
 })
