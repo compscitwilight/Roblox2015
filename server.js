@@ -41,17 +41,29 @@ app.all("/home", (req, res) => {
         return
     }
     if (req.session.user.moderation.moderated) {
-        console.log("yea")
-        res.render("notauthorized.ejs", { moderation: req.session.user.moderation })
+        res.redirect("/notauthorized")
         return
     }
     res.render("home.ejs", { session: req.session })
 })
 
+app.all("/notauthorized", (req, res) => {
+    if (!req.session.authenticated) {
+        res.sendStatus(403)
+        res.redirect("/")
+        return
+    }
+    if (!req.session.user.moderation.moderated) {
+        res.sendStatus(403)
+        res.redirect("/home")
+        return
+    }
+    res.render("notauthorized.ejs", { moderation: req.session.user.moderation })
+})
+
 app.all("/:page", (req, res) => {
     if (req.session.user.moderation.moderated) {
-        console.log("yea")
-        req.render("notauthorized.ejs", { moderation: req.session.user.moderation })
+        res.redirect("/notauthorized")
         return
     }
     const page = req.params.page
