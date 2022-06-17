@@ -72,5 +72,9 @@ app.all("/:page", (req, res) => {
         res.sendStatus(404)
         return
     }
+    if (!req.session.authenticated) {
+        res.render(path)
+        return
+    }
     res.render(path, { session: req.session })
 })
