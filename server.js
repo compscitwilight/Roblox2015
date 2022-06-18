@@ -4,8 +4,6 @@ const fs = require("fs")
 const serverConfig = require("./config/server.json")
 const app = express()
 
-const users = require("./usersdb")
-
 //app.set("trust proxy", 1)
 app.set("view engine", "ejs")
 
