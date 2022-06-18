@@ -2,7 +2,7 @@ const express = require("express")
 const ejs = require("ejs")
 const router = express.Router()
 
-const users = require("./usersdb")
+const users = require("./db/usersdb")
 const auth = require("./auth")
 
 // get requests

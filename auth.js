@@ -1,4 +1,4 @@
-const users = require("./usersdb")
+const users = require("./db/usersdb")
 
 module.exports = {
     RegisterUser(data, res) {
