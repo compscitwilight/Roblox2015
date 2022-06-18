@@ -7,6 +7,7 @@
     <link href="/public/styles/global.css" rel="stylesheet">
     <link href="/public/styles/topbar.css" rel="stylesheet">
     <link href="/public/styles/buttons.css" rel="stylesheet">
+    <link href="/public/styles/catalog.css" rel="stylesheet">
     <link href="/public/images/favicon.svg" rel="icon" type="image/svg+xml">
     <title><%=item.name%>, a <%=item.category%> by <%=item.creator%> - ROBLOX</title>
 </head>
@@ -34,6 +35,56 @@
                 </div>
                 <img src="/public/images/settings-icon.png" id="topbar-settings">
             <% } %>
+        </div>
+    </div>
+    <div id="content">
+        <h1><%=item.name%></h1>
+        <b>ROBLOX <%=item.category%></b>
+        <div id="item-image-div">
+            <img src="" alt="<%=item.name%>">
+            <button>Enable 3D</button>
+        </div>
+        <div id="item-info-div">
+            <img id="item-creator-img">
+            <div id="creator-name">
+                <label>Creator:</label>
+                <a><%=item.creator%></a>
+            </div>
+            <div id="item-creation-date">
+                <label>Created:</label>
+                <%=item.created.split(" ")[0]%>
+            </div>
+            <div id="item-updated">
+                <label>Updated:</label>
+                <%=item.created.split(" ")[0]%>
+            </div>
+            <div id="item-description">
+                <p><%=item.description%></p>
+            </div>
+            <hr>
+            <label>Genres:</label>
+        </div>
+        <div id="purchase-div">
+            <div id="price">
+                <label>Price:</label>
+                <%if (item.price.robux) {%>
+                    <p>R$ <%=item.price.robux%></p>
+                <%}%>
+                <%if (item.price.tickets) {%>
+                    <p>Tickets: <%=item.price.tickets%></p>
+                <%}%>
+            </div>
+            <div id="purchase-action">
+                <%if (item.price.robux) {%>
+                    <button>Buy with R$</button>
+                <%}%>
+                <%if (item.price.tickets) {%>
+                    <button>Buy with Tickets</button>
+                <%}%>
+            </div>
+            <div id="sold">
+                <p>(0 Sold)</p>
+            </div>
         </div>
     </div>
 </body>
