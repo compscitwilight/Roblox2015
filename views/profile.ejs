@@ -13,7 +13,9 @@
 </head>
 <body>
     <%-include("../public/components/topbar.ejs", {session: session})%>
-    <div id="sidebar"></div>
+    <% if (session.authenticated) { %>
+        <%-include("../public/components/sidebar.ejs", {session: session})%>
+    <%}%>
     <div id="content">
         <div id="profile-top-container">
             <img id="profile-headshot" src=<%=user.avatarCdn%>>

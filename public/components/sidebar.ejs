@@ -1,0 +1,36 @@
+<div id="sidebar">
+    <a href="/users/<%=session.user.id%>/profile" id="sidebar-username"><%= session.user.username%></a>
+    <hr id="sidebar-hr">
+    <ul id="sidebar-navigation">
+        <li class="sidebar-route">
+            <a href="/home">Home</a>
+        </li>
+        <li class="sidebar-route">
+            <a href="/users/<%=session.user.id%>/profile">Profile</a>
+        </li>
+        <li class="sidebar-route">
+            <a href="/messages">Messages</a>
+        </li>
+        <li class="sidebar-route">
+            <a href="/users/<%=session.user.id%>/friends">Friends</a>
+        </li>
+        <li class="sidebar-route">
+            <a href="/character">Character</a>
+        </li>
+        <li class="sidebar-route">
+            <a href="/users/<%=session.user.id%>/inventory">Inventory</a>
+        </li>
+        <li class="sidebar-route">
+            <a href="/trade">Trade</a>
+        </li>
+        <li class="sidebar-route">
+            <a href="/groups">Groups</a>
+        </li>
+        <li class="sidebar-route">
+            <a href="/forum">Forum</a>
+        </li>
+        <li class="sidebar-route">
+            <a href="/blog">Blog</a>
+        </li>
+    </ul>
+</div>
