@@ -30,6 +30,7 @@ router.post("/create", (req, res) => {
         onsale: body.onsale || false,
         description: body.description || "This item does not have a description.",
         creator: body.creator || "admin",
+        category: body.category || "Hat",
         created: new Date().toUTCString(),
         limited: body.limited || false,
         limitedU: body.limitedU || false
