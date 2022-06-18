@@ -119,4 +119,35 @@ router.post("/:userId/status", (req, res) => {
     user.status = status
 })
 
+router.post("/moderate", (req, res) => {
+    const body = req.body
+    const session = req.session
+    if (!session.authenticated) {
+        res.sendStatus(403)
+        return
+    }
+    if (!session.user.admin) {
+        res.sendStatus(403)
+        return
+    }
+    if (!body.userid) {
+        res.sendStatus(404)
+        return
+    }
+
+    const user = usersdb.find(user => user.id == body.userid)
+    if (user.moderation.moderated) {
+        res.sendStatus(403)
+        return
+    }
+    user.moderation = {
+        moderated: true,
+        note: body.note || "",
+        modLength: body.modLength || "3 days",
+        reviewed: new Date().toUTCString(),
+        type: body.type || "ban"
+    }
+    res.sendStatus(200)
+})
+
 module.exports = router
