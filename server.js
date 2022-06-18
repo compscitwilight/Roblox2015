@@ -19,6 +19,7 @@ app.use(express.json())
 // routes
 app.use("/public", require("./public.js"))
 app.use("/users", require("./users.js"))
+app.use("/catalog", require("./catalog.js"))
 
 app.listen(serverConfig.PORT, () => {
     console.log(serverConfig.StartMsg)
