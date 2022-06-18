@@ -66,7 +66,7 @@ app.all("/adminpanel", (req, res) => {
         res.sendStatus(403).redirect("/")
         return
     }
-    res.render("adminpanel.ejs", { session: session })
+    res.render("adminpanel.ejs", { session: session, ip: req.ip })
 })
 
 app.all("/:page", (req, res) => {

@@ -26,7 +26,7 @@ router.post("/create", (req, res) => {
     const newItem = {
         id: catalogdb.length + 1,
         name: body.name || "Unnamed",
-        price: body.price || { robux: 0, tickets: 0 },
+        price: { robux: body.robux, tickets: body.tickets } || { robux: 0, tickets: 0 },
         onsale: body.onsale || false,
         description: body.description || "This item does not have a description.",
         creator: body.creator || "admin",
@@ -35,7 +35,7 @@ router.post("/create", (req, res) => {
         limitedU: body.limitedU || false
     }
     catalogdb.push(newItem)
-    res.status(200).send(newItem)
+    res.status(200).redirect("/catalog/" + newItem.id)
 })
 
 module.exports = router
