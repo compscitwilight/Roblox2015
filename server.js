@@ -56,6 +56,19 @@ app.all("/notauthorized", (req, res) => {
     res.render("notauthorized.ejs", { moderation: req.session.user.moderation })
 })
 
+app.all("/adminpanel", (req, res) => {
+    const session = req.session
+    if (!session.authenticated) {
+        res.sendStatus(403).redirect("/")
+        return
+    }
+    if (!session.user.admin) {
+        res.sendStatus(403).redirect("/")
+        return
+    }
+    res.render("adminpanel.ejs", { session: session })
+})
+
 app.all("/:page", (req, res) => {
     if (req.session.user.moderation.moderated) {
         res.redirect("/notauthorized")

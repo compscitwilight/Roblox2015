@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/styles/global.css" rel="stylesheet">
+    <link href="/public/styles/topbar.css" rel="stylesheet">
+    <link href="/public/styles/buttons.css" rel="stylesheet">
+    <link href="/public/images/favicon.svg" rel="icon" type="image/svg+xml">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div id="topbar">
+        <a href="/">
+            <img src="/public/images/logo-full.png" alt="Roblox 2015 Clone" id="topbar-logo">
+        </a>
+        <a href="/">Home</a>
+        <a href="#catalog">Catalog Management</a>
+        <a href="#moderation">Moderation</a>
+        <a href="#debug">Debugging</a>
+        <div id="topbar-right">
+            <% if (!session.authenticated) { %>
+                <a href="/">Sign Up</a>
+                <a href="/">Log In</a>
+            <% } else { %>
+                <!--
+                <div id="robux">
+                    <img src="/public/images/robux.png">
+                    <a href="/robux" id="topbar-robux"><%= session.user.robux %></a>
+                </div>
+                <div id="tickets">
+                    <a href="/develop" id="topbar-tickets"><%= session.user.tickets %></a>
+                </div>
+                -->
+                <img src="/public/images/settings-icon.png" id="topbar-settings">
+            <% } %>
+        </div>
+    </div>
+    <div id="content">
+        <h1>Welcome to the admin panel, <%=session.user.username%></h1>
+        <div id="catalog">
+            <h2>Catalog Management</h2>
+            <h4>Item Creation</h4>
+            <form action="/catalog/create" method="POST">
+                <div>
+                    <label>Name:</label>
+                    <input type="text" name="name" placeholder="Name" required>
+                </div>
+                <div>
+                    <label>Price:</label>
+                    <input type="text" name="robux" placeholder="Price: Robux" required>
+                    <input type="text" name="tickets" placeholder="Price: Tickets" required>
+                </div>
+                <div>
+                    <label>Onsale:</label>
+                    <input type="checkbox" name="Onsale" required>
+                </div>
+                <div>
+                    <label>Description:</label>
+                    <textarea name="description" placeholder="Description" required></textarea>
+                </div>
+                <div>
+                    <label>Creator (Note: this shouldn't be set and it should always be admin):</label>
+                    <input type="text" name="creator" placeholder="Creator" required>
+                </div>
+                <div>
+                    <label>Limited:</label>
+                    <input type="checkbox" name="limited">
+                    <br>
+                    <label>Limited U:</label>
+                    <input type="checkbox" name="limitedU">
+                </div>
+                <button type="submit" class="btn-growth-sm">Create</button>
+            </form>
+        </div>
+        <div id="moderation">
+            <h2>Moderation</h2>
+        </div>
+        <div id="debug">
+            <h2>Debugging</h2>
+        </div>
+    </div>
+</body>
+</html>
