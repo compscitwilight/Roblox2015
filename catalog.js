@@ -11,7 +11,7 @@ router.get("/:itemId", (req, res) => {
         res.status(404).redirect("/catalog")
         return
     }
-    res.render("catalog.ejs", { session: req.session, item: item })
+    res.render("catalogitem.ejs", { session: req.session, item: item })
 })
 
 // post requests

@@ -7,6 +7,7 @@ module.exports = [
         onsale: true,
         description: "This is a hat just for testing!",
         creator: "admin",
+        category: "Hat",
         created: "6/18/2022 5:59AM PST",
         limited: false,
         limitedU: false

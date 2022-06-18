@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/styles/global.css" rel="stylesheet">
+    <link href="/public/styles/topbar.css" rel="stylesheet">
+    <link href="/public/styles/buttons.css" rel="stylesheet">
+    <link href="/public/images/favicon.svg" rel="icon" type="image/svg+xml">
+    <title><%=item.name%>, a <%=item.category%> by <%=item.creator%> - ROBLOX</title>
+</head>
+<body>
+    <div id="topbar">
+        <a href="/">
+            <img src="/public/images/logo-full.png" alt="Roblox 2015 Clone" id="topbar-logo">
+        </a>
+        <a href="/games">Games</a>
+        <a href="/catalog">Catalog</a>
+        <a href="/develop">Develop</a>
+        <a href="/robux">ROBUX</a>
+        <input id="search-bar" type="text" placeholder="Search">
+        <div id="topbar-right">
+            <% if (!session.authenticated) { %>
+                <a href="/">Sign Up</a>
+                <a href="/">Log In</a>
+            <% } else { %>
+                <div id="robux">
+                    <img src="/public/images/robux.png">
+                    <a href="/robux" id="topbar-robux"><%= session.user.robux %></a>
+                </div>
+                <div id="tickets">
+                    <a href="/develop" id="topbar-tickets"><%= session.user.tickets %></a>
+                </div>
+                <img src="/public/images/settings-icon.png" id="topbar-settings">
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
