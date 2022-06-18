@@ -8,7 +8,18 @@
     <a href="/robux">ROBUX</a>
     <input id="search-bar" type="text" placeholder="Search">
     <div id="topbar-right">
-        <a href="/">Sign Up</a>
-        <a href="/">Log In</a>
+        <% if (!session.authenticated) { %>
+            <a href="/">Sign Up</a>
+            <a href="/">Log In</a>
+        <% } else { %>
+            <div id="robux">
+                <img src="/public/images/robux.png">
+                <a href="/robux" id="topbar-robux"><%= session.user.robux %></a>
+            </div>
+            <div id="tickets">
+                <a href="/develop" id="topbar-tickets"><%= session.user.tickets %></a>
+            </div>
+            <img src="/public/images/settings-icon.png" id="topbar-settings">
+        <% } %>
     </div>
 </div>

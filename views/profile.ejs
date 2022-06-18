@@ -12,26 +12,7 @@
     <title>Profile - ROBLOX</title>
 </head>
 <body>
-    <div id="topbar">
-        <a href="/">
-            <img src="/public/images/logo-full.png" alt="Roblox 2015 Clone" id="topbar-logo">
-        </a>
-        <a href="/games">Games</a>
-        <a href="/catalog">Catalog</a>
-        <a href="/develop">Develop</a>
-        <a href="/robux">ROBUX</a>
-        <input id="search-bar" type="text" placeholder="Search">
-        <div id="topbar-right">
-            <% if (!session.authenticated) { %>
-                <a href="/">Sign Up</a>
-                <a href="/">Log In</a>
-            <% } else { %>
-                <a href="/robux" id="topbar-robux"><%= session.user.robux %></a>
-                <a href="/develop" id="topbar-tickets"><%= session.user.tickets %></a>
-                <img src="/public/images/settings-icon.png" id="topbar-settings">
-            <% } %>
-        </div>
-    </div>
+    <%-include("../public/components/topbar.ejs", {session: session})%>
     <div id="sidebar"></div>
     <div id="content">
         <div id="profile-top-container">

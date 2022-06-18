@@ -11,32 +11,7 @@
     <title>Admin Panel</title>
 </head>
 <body>
-    <div id="topbar">
-        <a href="/">
-            <img src="/public/images/logo-full.png" alt="Roblox 2015 Clone" id="topbar-logo">
-        </a>
-        <a href="/">Home</a>
-        <a href="#catalog">Catalog Management</a>
-        <a href="#moderation">Moderation</a>
-        <a href="#debug">Debugging</a>
-        <div id="topbar-right">
-            <% if (!session.authenticated) { %>
-                <a href="/">Sign Up</a>
-                <a href="/">Log In</a>
-            <% } else { %>
-                <!--
-                <div id="robux">
-                    <img src="/public/images/robux.png">
-                    <a href="/robux" id="topbar-robux"><%= session.user.robux %></a>
-                </div>
-                <div id="tickets">
-                    <a href="/develop" id="topbar-tickets"><%= session.user.tickets %></a>
-                </div>
-                -->
-                <img src="/public/images/settings-icon.png" id="topbar-settings">
-            <% } %>
-        </div>
-    </div>
+    <%-include("../public/components/topbar.ejs", {session: session})%>
     <div id="content">
         <h1>Welcome to the admin panel, <%=session.user.username%></h1>
         <p>IP Address: <%= ip %></p>
