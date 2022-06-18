@@ -1,0 +1,20 @@
+#header {
+    margin: 12px;
+    margin-left: 20%;
+    margin-top: 7%;
+}
+
+#header-text {
+    float: left;
+    text-decoration: none;
+    color: black;
+}
+
+#catalog-query {
+    margin-left: 20%;
+}
+
+#catalog-search-box {
+    padding: 2.5px;
+    padding-right: 2.5%;
+}
