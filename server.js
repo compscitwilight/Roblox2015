@@ -13,7 +13,7 @@ app.use(session({
     cookie: { secure: false },
     resave: false
 }))
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false })); // this is meant to fix an issue where req.body is empty when a POST request is recieved
 app.use(express.json())
 
 // routes
