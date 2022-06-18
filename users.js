@@ -143,7 +143,7 @@ router.post("/moderate", (req, res) => {
     user.moderation = {
         moderated: true,
         note: body.note || "",
-        modLength: body.modLength || "3 days",
+        modLength: body.modLength || "",
         reviewed: new Date().toUTCString(),
         type: body.type || "ban"
     }

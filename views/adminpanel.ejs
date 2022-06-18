@@ -60,6 +60,30 @@
         </div>
         <div id="moderation">
             <h2>Moderation</h2>
+            <h3>Moderate User</h3>
+            <form action="/users/moderate" method="POST">
+                <div>
+                    <label>User ID:</label>
+                    <input type="text" name="userid" placeholder="User ID" required>
+                </div>
+                <div>
+                    <label>Note:</label>
+                    <input type="text" name="note" placeholder="Note" required>
+                </div>
+                <div>
+                    <label>Length</label>
+                    <input type="date" name="modLength" required>
+                </div>
+                <div>
+                    <label>Type:</label>
+                    <select name="type" required>
+                        <option value="Warning">Warning</option>
+                        <option value="Ban">Ban</option>
+                        <option value="Deletion">Deletion</option>
+                    </select>
+                </div>
+                <button class="btn-growth-sm">Execute</button>
+            </form>
         </div>
         <div id="debug">
             <h2>Debugging</h2>
