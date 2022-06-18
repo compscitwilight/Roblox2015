@@ -21,10 +21,6 @@ app.use("/public", require("./public.js"))
 app.use("/users", require("./users.js"))
 app.use("/catalog", require("./catalog.js"))
 
-app.listen(serverConfig.PORT, () => {
-    console.log(serverConfig.StartMsg)
-})
-
 app.all("/", (req, res) => {
     if (!req.session.authenticated) {
         res.render("index.ejs")
@@ -76,4 +72,8 @@ app.all("/:page", (req, res) => {
         return
     }
     res.render(path, { session: req.session })
+})
+
+app.listen(serverConfig.PORT, () => {
+    console.log(serverConfig.StartMsg)
 })
