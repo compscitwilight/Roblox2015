@@ -6,6 +6,9 @@
     <a href="/catalog">Catalog</a>
     <a href="/develop">Develop</a>
     <a href="/robux">ROBUX</a>
+    <% if (session.user.admin) { %>
+        <a href="/adminpanel">Admin Panel</a>
+    <%}%>
     <input id="search-bar" type="text" placeholder="Search">
     <div id="topbar-right">
         <% if (!session.authenticated) { %>
