@@ -22,3 +22,16 @@ body {
     padding: 2.5px;
     padding-right: 2.5%;
 }
+
+#catalog-categories {
+    padding: 0;
+    display: inline-block;
+    border-style: solid;
+    border-color: #777777;
+    background-color: #EFEFEF;
+    margin-right: 70%;
+}
+
+.catalog-category {
+    list-style: none;
+}
