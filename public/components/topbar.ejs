@@ -25,6 +25,19 @@
                 <a href="/develop" id="topbar-tickets"><%= session.user.tickets %></a>
             </div>
             <img src="/public/images/settings-icon.png" id="topbar-settings">
+            <div id="topbar-more-menu">
+                <ul>
+                    <li>
+                        <a href="/settings">Settings</a>
+                    </li>
+                    <li>
+                        <a href="/help">Help</a>
+                    </li>
+                    <li>
+                        <a href="/users/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
         <% } %>
     </div>
 </div>
