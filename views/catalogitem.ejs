@@ -55,10 +55,14 @@
             </div>
             <div id="purchase-action">
                 <%if (item.price.robux) {%>
-                    <button>Buy with R$</button>
+                    <form action="/catalog/purchase" method="POST">
+                        <button name="item" value="<%=item.name%>">Buy with R$</button>
+                    </form>
                 <%}%>
                 <%if (item.price.tickets) {%>
-                    <button>Buy with Tickets</button>
+                    <form action="/catalog/purchase" method="POST">
+                        <button name="item" value="<%=item.name%>">Buy with Tickets</button>
+                    </form>
                 <%}%>
             </div>
             <div id="sold">
