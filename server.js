@@ -1,3 +1,9 @@
+/**
+ * Code written by devrusty (github.com/devrusty)
+ * This code is meant for devrusty/Roblox2015, an open sorce project
+ * If there any issues with this, please create a pull request
+ */
+
 const express = require("express")
 const session = require("express-session")
 const fs = require("fs")
