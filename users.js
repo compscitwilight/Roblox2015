@@ -147,7 +147,7 @@ router.post("/moderate", (req, res) => {
         reviewed: new Date().toUTCString(),
         type: body.type || "ban"
     }
-    res.sendStatus(200)
+    res.status(200).redirect("/adminpanel")
 })
 
 module.exports = router
