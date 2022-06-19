@@ -84,6 +84,26 @@ body {
     display: inline;
 }
 
+#topbar-more-menu {
+    display: none;
+}
+
+#topbar-more-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFF;
+}
+
+#topbar-more-menu a {
+    color: black;
+}
+
+#topbar-more-menu a:hover {
+    background-color: #FFF !important;
+}
+
 /* signup topbar */
 #signup-topbar {
     background-color: rgba(0, 0, 0, 0.35);
