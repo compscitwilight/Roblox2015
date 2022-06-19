@@ -135,7 +135,7 @@ router.post("/moderate", (req, res) => {
         return
     }
 
-    const user = usersdb.find(user => user.id == body.userid)
+    const user = users.find(user => user.id == body.userid)
     if (user.moderation.moderated) {
         res.sendStatus(403)
         return
