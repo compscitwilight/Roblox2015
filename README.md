@@ -1,6 +1,6 @@
-# Roblox 2015 Website Clone
+# Roblox 2015 Website
 ### Description
-This is a remake/clone of the Roblox 2015 website, please note that all assets that belong to Roblox Corporation are theirs, I do not own them.
+This is a remake of the Roblox 2015 website, please note that all assets that belong to Roblox Corporation are theirs, I do not own them.
 
 ### Purpose of this project
 The purpose of this project is to simply bring back the 2015 website the way that the Wayback Machine cannot. This project is fully equipped with registration, login, APIs, and everything else needed to make a functional and nostalgic website (besides databases atm).
